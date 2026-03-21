@@ -1,0 +1,82 @@
+cff-version: 1.2.0
+title: "SemioViz — Fondamenti della semiotica: dall'equivalenza all'inferenza"
+message: "Se utilizzi questo dataset o applicazione, per favore citalo come indicato."
+type: dataset
+authors:
+  - family-names: Carotenuto
+    given-names: Stefano
+    affiliation: "CNR-ISMED (Consiglio Nazionale delle Ricerche — Istituto di Studi sul Mediterraneo)"
+version: "1.0.0"
+date-released: "2026-03-21"
+license: CC-BY-NC-SA-4.0
+url: "https://stefanocarotenuto.github.io/semio-viz/"
+repository-code: "https://github.com/stefanocarotenuto/semio-viz"
+abstract: >-
+  Dataset strutturato sulla storia e i concetti fondamentali della semiotica,
+  dal modello ristretto (equivalenza) al modello allargato (inferenza).
+  56 tesi sintetiche con spiegazioni estese, 90+ connessioni di accordo e critica,
+  13 diagrammi SVG, 5 tradizioni semiotiche (Precursori, Saussure, Peirce,
+  Hjelmslev, Eco). Bilingue italiano/inglese.
+keywords:
+  - semiotics
+  - semiotica
+  - semiologia
+  - Saussure
+  - Peirce
+  - Hjelmslev
+  - Eco
+  - sign theory
+  - data visualization
+  - open data
+  - digital humanities
+references:
+  - type: book
+    title: "Semiotica e filosofia del linguaggio"
+    authors:
+      - family-names: Eco
+        given-names: Umberto
+    year: 1984
+  - type: book
+    title: "Corso di linguistica generale"
+    authors:
+      - family-names: de Saussure
+        given-names: Ferdinand
+    year: 1916
+  - type: book
+    title: "I fondamenti della teoria del linguaggio"
+    authors:
+      - family-names: Hjelmslev
+        given-names: Louis
+    year: 1943
+  - type: article
+    title: "Questions Concerning Certain Faculties Claimed for Man"
+    authors:
+      - family-names: Peirce
+        given-names: Charles Sanders
+    year: 1868
+    journal: "Journal of Speculative Philosophy"
+    volume: 2
+  - type: article
+    title: "Some Consequences of Four Incapacities"
+    authors:
+      - family-names: Peirce
+        given-names: Charles Sanders
+    year: 1868
+    journal: "Journal of Speculative Philosophy"
+    volume: 2
+  - type: article
+    title: "The Fixation of Belief"
+    authors:
+      - family-names: Peirce
+        given-names: Charles Sanders
+    year: 1877
+    journal: "Popular Science Monthly"
+    volume: 12
+  - type: article
+    title: "How to Make Our Ideas Clear"
+    authors:
+      - family-names: Peirce
+        given-names: Charles Sanders
+    year: 1878
+    journal: "Popular Science Monthly"
+    volume: 12

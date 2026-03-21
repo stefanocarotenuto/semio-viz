@@ -177,7 +177,10 @@ function selectCard(id) {
   _lastFocusedCard = document.activeElement;
   state.selected = id;
   render(); renderSheet();
-  document.getElementById("sheet").classList.add("open");
+  document.getElementById("sheet-scroll").scrollTop = 0;
+  const sheetEl = document.getElementById("sheet");
+  sheetEl.classList.remove("scrolled-bottom");
+  sheetEl.classList.add("open");
   document.getElementById("main").classList.add("sheet-open");
   const card = document.querySelector(`[data-id="${id}"]`);
   if (card) card.scrollIntoView({ behavior: "smooth", block: "center" });
@@ -263,6 +266,15 @@ function setFilter(id) {
   document.getElementById("sheet").classList.remove("open");
   document.getElementById("main").classList.remove("sheet-open");
   document.querySelectorAll(".f-btn").forEach(b => b.classList.toggle("active", b.dataset.fid === id));
+  // On mobile, if current author has no cards for this filter, switch to first author that does
+  if (!isDesktop()) {
+    const vis = getFiltered();
+    const hasCards = S.some(s => s.a === state.activeTab && vis.has(s.id));
+    if (!hasCards) {
+      const first = AUTHORS.find(a => S.some(s => s.a === a.id && vis.has(s.id)));
+      if (first) { state.activeTab = first.id; updateTabs(); }
+    }
+  }
   render();
 }
 function onSearch(val) {
@@ -310,6 +322,13 @@ function initControls() {
       if (id) selectCard(id);
     }
   });
+  // Fade scroll hint when sheet reaches bottom
+  const sheetScroll = document.getElementById("sheet-scroll");
+  const sheet = document.getElementById("sheet");
+  sheetScroll.addEventListener("scroll", () => {
+    const atBottom = sheetScroll.scrollHeight - sheetScroll.scrollTop - sheetScroll.clientHeight < 8;
+    sheet.classList.toggle("scrolled-bottom", atBottom);
+  }, { passive: true });
   // Click outside sheet to close
   document.addEventListener("mousedown", e => {
     if (!state.selected) return;

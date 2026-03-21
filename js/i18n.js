@@ -33,6 +33,15 @@ const I18N = {
       <p>Una mappa interattiva che sintetizza e visualizza i concetti fondamentali della semiotica, seguendo il filo conduttore del passaggio dal <strong>modello ristretto</strong> (il segno come equivalenza) al <strong>modello allargato</strong> (il segno come inferenza). Circa 56 affermazioni sintetiche, oltre 90 connessioni, diagrammi ed esempi didattici.</p>
       <h3>Contribuisci</h3>
       <p>SemioViz è un progetto aperto: l'idea è partire da questo nucleo di autori e ampliarlo nel tempo con nuove correnti e teorie semiotiche. Contributi, suggerimenti e correzioni sono benvenuti su <a href="https://github.com/stefanocarotenuto/semio-viz" target="_blank" rel="noopener">GitHub</a>.</p>
+      <h3>Open Data</h3>
+      <p>L'intero dataset di SemioViz è disponibile per il download in formati aperti.</p>
+      <div class="open-data-downloads">
+        <a class="dl-btn" href="data/semioviz-dataset.json" download><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>JSON-LD</a>
+        <a class="dl-btn" href="data/statements.csv" download><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Tesi (CSV)</a>
+        <a class="dl-btn" href="data/connections.csv" download><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Connessioni (CSV)</a>
+        <a class="dl-btn" href="data/authors.csv" download><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Autori (CSV)</a>
+      </div>
+      <p class="open-data-note">Licenza: CC BY-NC-SA 4.0. Descrizione dei campi e schema in <a href="data/datapackage.json" target="_blank" rel="noopener">datapackage.json</a>.</p>
       <h3>Riferimenti bibliografici</h3>
       <div class="refs">
         <div class="ref"><span class="ref-a">F. de Saussure</span><em>Corso di linguistica generale</em><span>(1916). Ed. it. Laterza.</span></div>
@@ -94,6 +103,15 @@ const I18N = {
       <p>An interactive map that synthesizes and visualizes the key concepts of structural and interpretive semiotics, following the central thread: the passage from the <strong>restricted model</strong> (the sign as equivalence) to the <strong>enlarged model</strong> (the sign as inference). Approximately 56 synthesized statements with over 90 connections, enriched with didactic examples and diagrams.</p>
       <h3>Contribute</h3>
       <p>SemioViz is an open project: the idea is to start from this core set of authors and expand it over time with new schools and semiotic theories. Contributions, suggestions and corrections are welcome on <a href="https://github.com/stefanocarotenuto/semio-viz" target="_blank" rel="noopener">GitHub</a>.</p>
+      <h3>Open Data</h3>
+      <p>The full SemioViz dataset is available for download in open formats.</p>
+      <div class="open-data-downloads">
+        <a class="dl-btn" href="data/semioviz-dataset.json" download><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>JSON-LD</a>
+        <a class="dl-btn" href="data/statements.csv" download><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Statements (CSV)</a>
+        <a class="dl-btn" href="data/connections.csv" download><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Connections (CSV)</a>
+        <a class="dl-btn" href="data/authors.csv" download><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Authors (CSV)</a>
+      </div>
+      <p class="open-data-note">License: CC BY-NC-SA 4.0. Field descriptions and schema in <a href="data/datapackage.json" target="_blank" rel="noopener">datapackage.json</a>.</p>
       <h3>References</h3>
       <div class="refs">
         <div class="ref"><span class="ref-a">F. de Saussure</span><em>Corso di linguistica generale</em><span>(1916). Ed. it. Laterza.</span></div>

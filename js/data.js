@@ -100,22 +100,43 @@ assiSaussure: `<svg viewBox="0 0 340 170" xmlns="http://www.w3.org/2000/svg" sty
   <text x="128" y="162" text-anchor="middle" fill="#5c6278" font-size="10">...</text>
 </svg>`,
 
-triadePeirce: `<svg viewBox="0 0 340 260" xmlns="http://www.w3.org/2000/svg" style="max-width:320px">
-  <line x1="170" y1="52" x2="50" y2="195" stroke="#f87171" stroke-width="1.5"/>
-  <line x1="170" y1="52" x2="290" y2="195" stroke="#f87171" stroke-width="1.5"/>
-  <line x1="50" y1="195" x2="290" y2="195" stroke="#f87171" stroke-width="1.5"/>
-  <circle cx="170" cy="48" r="24" fill="#1a1e2a" stroke="#f87171" stroke-width="2"/>
-  <text x="170" y="53" text-anchor="middle" fill="#f87171" font-size="10" font-weight="700" font-family="system-ui,sans-serif">OGG.</text>
-  <text x="170" y="14" text-anchor="middle" fill="#a0a6b8" font-size="9" font-family="system-ui,sans-serif">ciò per cui il segno sta</text>
-  <circle cx="50" cy="195" r="24" fill="#1a1e2a" stroke="#f87171" stroke-width="2"/>
-  <text x="50" y="200" text-anchor="middle" fill="#f87171" font-size="10" font-weight="700" font-family="system-ui,sans-serif">REPR.</text>
-  <text x="50" y="232" text-anchor="middle" fill="#a0a6b8" font-size="9" font-family="system-ui,sans-serif">veicolo segnico</text>
-  <circle cx="290" cy="195" r="24" fill="#1a1e2a" stroke="#f87171" stroke-width="2"/>
-  <text x="290" y="200" text-anchor="middle" fill="#f87171" font-size="10" font-weight="700" font-family="system-ui,sans-serif">INTERP.</text>
-  <text x="290" y="232" text-anchor="middle" fill="#a0a6b8" font-size="9" font-family="system-ui,sans-serif">effetto → nuovo segno</text>
-  <text x="95" y="115" text-anchor="middle" fill="#5c6278" font-size="9" font-family="system-ui,sans-serif" transform="rotate(-47,95,115)">determina</text>
-  <text x="245" y="115" text-anchor="middle" fill="#5c6278" font-size="9" font-family="system-ui,sans-serif" transform="rotate(47,245,115)">genera</text>
-  <text x="170" y="252" text-anchor="middle" fill="#5c6278" font-size="9" font-family="system-ui,sans-serif">traduce / interpreta</text>
+triadePeirce: `<svg viewBox="0 0 440 420" xmlns="http://www.w3.org/2000/svg" style="max-width:420px">
+  <defs>
+    <marker id="tri" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#f87171"/></marker>
+  </defs>
+  <!-- Triangle sides (light) -->
+  <line x1="80" y1="240" x2="360" y2="240" stroke="#f8717133" stroke-width="1.5"/>
+  <line x1="80" y1="240" x2="220" y2="55" stroke="#f8717133" stroke-width="1.5"/>
+  <line x1="360" y1="240" x2="220" y2="55" stroke="#f8717133" stroke-width="1.5"/>
+  <!-- Arrows (bold, inside triangle) -->
+  <line x1="102" y1="222" x2="205" y2="73" stroke="#f87171" stroke-width="2" marker-end="url(#tri)"/>
+  <line x1="338" y1="222" x2="235" y2="73" stroke="#f87171" stroke-width="2" marker-end="url(#tri)"/>
+  <line x1="334" y1="240" x2="108" y2="240" stroke="#f87171" stroke-width="2" marker-end="url(#tri)"/>
+  <!-- Vertex: INTERPRETANTE (top) -->
+  <circle cx="220" cy="52" r="7" fill="#f87171"/>
+  <text x="220" y="26" text-anchor="middle" fill="#f87171" font-size="13" font-weight="700" font-family="system-ui,sans-serif">INTERPRETANTE</text>
+  <!-- Vertex: SEGNO (bottom-left) -->
+  <circle cx="80" cy="240" r="7" fill="#f87171"/>
+  <text x="80" y="268" text-anchor="middle" fill="#f87171" font-size="13" font-weight="700" font-family="system-ui,sans-serif">SEGNO</text>
+  <!-- Vertex: OGGETTO DINAMICO (bottom-right) -->
+  <circle cx="360" cy="240" r="7" fill="#f87171"/>
+  <text x="360" y="268" text-anchor="middle" fill="#f87171" font-size="13" font-weight="700" font-family="system-ui,sans-serif">OGGETTO</text>
+  <text x="360" y="282" text-anchor="middle" fill="#f87171" font-size="12" font-family="system-ui,sans-serif">DINAMICO</text>
+  <text x="360" y="300" text-anchor="middle" fill="#a0a6b8" font-size="9" font-family="system-ui,sans-serif">l'oggetto esterno</text>
+  <text x="360" y="312" text-anchor="middle" fill="#a0a6b8" font-size="9" font-family="system-ui,sans-serif">vero e proprio</text>
+  <!-- Annotation: right of top vertex -->
+  <text x="330" y="100" text-anchor="start" fill="#a0a6b8" font-size="9" font-family="system-ui,sans-serif">un altro segno che dice</text>
+  <text x="330" y="112" text-anchor="start" fill="#a0a6b8" font-size="9" font-family="system-ui,sans-serif">qualcosa in più</text>
+  <line x1="325" y1="100" x2="232" y2="58" stroke="#a0a6b844" stroke-width="1" stroke-dasharray="3,3"/>
+  <!-- Decomposition of SEGNO -->
+  <line x1="80" y1="328" x2="80" y2="345" stroke="#5c627855" stroke-width="1" stroke-dasharray="3,3"/>
+  <rect x="10" y="345" width="80" height="30" rx="4" fill="#f8717111" stroke="#f8717144" stroke-width="1"/>
+  <text x="50" y="364" text-anchor="middle" fill="#f87171" font-size="10" font-weight="600" font-family="system-ui,sans-serif">Representamen</text>
+  <rect x="96" y="345" width="85" height="30" rx="4" fill="#f8717111" stroke="#f8717144" stroke-width="1"/>
+  <text x="138" y="364" text-anchor="middle" fill="#f87171" font-size="10" font-weight="600" font-family="system-ui,sans-serif">Ogg. Immediato</text>
+  <text x="50" y="390" text-anchor="middle" fill="#a78bfa" font-size="9" font-family="system-ui,sans-serif">≈ Espressione</text>
+  <text x="138" y="390" text-anchor="middle" fill="#a78bfa" font-size="9" font-family="system-ui,sans-serif">≈ Contenuto</text>
+  <text x="95" y="412" text-anchor="middle" fill="#5c6278" font-size="8" font-style="italic" font-family="system-ui,sans-serif">cfr. Bonfantini, in Traini 2001</text>
 </svg>`,
 
 oggettoIdDin: `<svg viewBox="0 0 340 170" xmlns="http://www.w3.org/2000/svg" style="max-width:320px">

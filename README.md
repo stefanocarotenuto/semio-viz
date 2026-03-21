@@ -25,7 +25,7 @@ A visualization that presents the core statements of **five semiotic traditions*
 
 ### Central thread
 
-The passage from the **restricted model** of the sign (equivalence: signifier ↔ signified) to the **enlarged model** (inference: the sign as starting point for an open interpretive process), as proposed by Paolucci.
+The passage from the **restricted model** of the sign (equivalence: signifier ↔ signified) to the **enlarged model** (inference: the sign as starting point for an open interpretive process).
 
 ## How it works
 
@@ -83,7 +83,17 @@ semio-viz/
 │   ├── i18n.min.js           # Minified (production)
 │   ├── app.js                # App logic, rendering, i18n (source)
 │   └── app.min.js            # Minified (production)
-├── LICENSE                   # CC BY-NC-SA 4.0
+├── data/                      # Open dataset exports
+│   ├── semioviz-dataset.json  # JSON-LD with schema.org/SKOS/CiTO context
+│   ├── statements.csv         # 56 statements (id, author, tag, text, detail, filters)
+│   ├── connections.csv        # 90+ connections (source, target, type)
+│   ├── authors.csv            # 5 author/tradition entries
+│   └── datapackage.json       # Frictionless Data descriptor
+├── scripts/
+│   └── export-data.cjs        # Regenerate data/ exports: node scripts/export-data.cjs
+├── CITATION.cff               # Citation metadata (CFF standard)
+├── CLAUDE.md                  # Development instructions for Claude Code
+├── LICENSE                    # CC BY-NC-SA 4.0
 └── README.md
 ```
 
@@ -122,11 +132,28 @@ python3 -m http.server 8000
 - Semantic HTML (`<header>`, `<main>`, `<nav>`, `<aside>`) with ARIA labels
 - Non-blocking bottom sheet with click-outside-to-close and Esc hint
 
+## Open Data
+
+The full dataset is available for download in open formats:
+
+| Format | File | Description |
+|--------|------|-------------|
+| JSON-LD | [`data/semioviz-dataset.json`](data/semioviz-dataset.json) | Complete structured export |
+| CSV | [`data/statements.csv`](data/statements.csv) | 56 statements with text, details, filters |
+| CSV | [`data/connections.csv`](data/connections.csv) | 90+ directed connections (agree/disagree) |
+| CSV | [`data/authors.csv`](data/authors.csv) | 5 semiotic traditions/authors |
+
+Field descriptions and schema are documented in [`data/datapackage.json`](data/datapackage.json).
+
+### Citation
+
+If you use this dataset, please cite it as indicated in [`CITATION.cff`](CITATION.cff).
+
 ## SEO
 
 - `<meta>` description and keywords (IT)
 - Open Graph and Twitter Card meta tags
-- Schema.org JSON-LD (`WebApplication`)
+- Schema.org JSON-LD (`WebApplication` + `Dataset`)
 - `<link rel="canonical">`
 
 ## Privacy

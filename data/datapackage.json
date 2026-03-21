@@ -1,0 +1,112 @@
+{
+  "name": "semioviz-dataset",
+  "title": "SemioViz — Fondamenti della semiotica: dall'equivalenza all'inferenza",
+  "description": "Dataset strutturato sulla storia e i concetti fondamentali della semiotica. 56 tesi sintetiche con spiegazioni estese, 90+ connessioni di accordo e critica, 13 diagrammi SVG, 5 tradizioni semiotiche (Precursori, Saussure, Peirce, Hjelmslev, Eco). Bilingue italiano/inglese.",
+  "version": "1.0.0",
+  "created": "2026-03-21",
+  "licenses": [
+    {
+      "name": "CC-BY-NC-SA-4.0",
+      "path": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+      "title": "Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International"
+    }
+  ],
+  "contributors": [
+    {
+      "title": "Stefano Carotenuto",
+      "role": "author",
+      "organization": "CNR-ISMED"
+    }
+  ],
+  "keywords": [
+    "semiotics",
+    "semiotica",
+    "Saussure",
+    "Peirce",
+    "Hjelmslev",
+    "Eco",
+    "sign theory",
+    "digital humanities",
+    "open data"
+  ],
+  "homepage": "https://stefanocarotenuto.github.io/semio-viz/",
+  "resources": [
+    {
+      "name": "authors",
+      "path": "authors.csv",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "description": "Le 5 tradizioni/autori della semiotica rappresentati nel dataset.",
+      "schema": {
+        "fields": [
+          { "name": "id", "type": "string", "description": "Identificativo univoco dell'autore/tradizione" },
+          { "name": "name", "type": "string", "description": "Nome visualizzato" },
+          { "name": "subtitle", "type": "string", "description": "Opera o periodo di riferimento" },
+          { "name": "years", "type": "string", "description": "Arco temporale" },
+          { "name": "color", "type": "string", "description": "Colore esadecimale associato nell'interfaccia" }
+        ],
+        "primaryKey": "id"
+      }
+    },
+    {
+      "name": "statements",
+      "path": "statements.csv",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "description": "56 tesi sintetiche con spiegazioni estese, tag tematici e filtri.",
+      "schema": {
+        "fields": [
+          { "name": "id", "type": "string", "description": "Identificativo univoco della tesi (es. sa1, pe6)" },
+          { "name": "author", "type": "string", "description": "ID dell'autore/tradizione (foreign key → authors.id)" },
+          { "name": "tag", "type": "string", "description": "Etichetta tematica breve" },
+          { "name": "text", "type": "string", "description": "Tesi sintetica in italiano" },
+          { "name": "detail", "type": "string", "description": "Spiegazione estesa con esempi (testo piano, HTML rimosso)" },
+          { "name": "filters", "type": "string", "description": "Categorie tematiche, separate da punto e virgola" },
+          { "name": "has_diagram", "type": "string", "description": "Chiave del diagramma SVG associato, se presente" }
+        ],
+        "primaryKey": "id",
+        "foreignKeys": [
+          {
+            "fields": ["author"],
+            "reference": { "resource": "authors", "fields": ["id"] }
+          }
+        ]
+      }
+    },
+    {
+      "name": "connections",
+      "path": "connections.csv",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "description": "90+ connessioni direzionali tra tesi: accordo (agree) o critica (disagree).",
+      "schema": {
+        "fields": [
+          { "name": "source", "type": "string", "description": "ID della tesi di partenza (foreign key → statements.id)" },
+          { "name": "target", "type": "string", "description": "ID della tesi di arrivo (foreign key → statements.id)" },
+          { "name": "type", "type": "string", "description": "Tipo di relazione: 'agree' (accordo/sviluppo) o 'disagree' (critica/opposizione)", "constraints": { "enum": ["agree", "disagree"] } }
+        ],
+        "foreignKeys": [
+          {
+            "fields": ["source"],
+            "reference": { "resource": "statements", "fields": ["id"] }
+          },
+          {
+            "fields": ["target"],
+            "reference": { "resource": "statements", "fields": ["id"] }
+          }
+        ]
+      }
+    },
+    {
+      "name": "dataset-jsonld",
+      "path": "semioviz-dataset.json",
+      "format": "json",
+      "mediatype": "application/ld+json",
+      "encoding": "utf-8",
+      "description": "Export completo in formato JSON-LD con contesto semantico (schema.org, SKOS, CiTO)."
+    }
+  ]
+}
