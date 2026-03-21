@@ -83,8 +83,6 @@ semio-viz/
 │   ├── i18n.min.js           # Minified (production)
 │   ├── app.js                # App logic, rendering, i18n (source)
 │   └── app.min.js            # Minified (production)
-├── .claude/
-│   └── skills/               # Claude Code skills
 ├── LICENSE                   # CC BY-NC-SA 4.0
 └── README.md
 ```
