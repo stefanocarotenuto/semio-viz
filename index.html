@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SemioViz — Summarized & Visualized</title>
+  <meta name="description" content="Mappa interattiva della teoria semiotica: Saussure, Hjelmslev, Peirce, Eco. Dal modello ristretto (equivalenza) al modello allargato (inferenza). 56 affermazioni, 90+ connessioni, diagrammi.">
+  <meta name="keywords" content="semiotica, semiologia, Saussure, Hjelmslev, Peirce, Eco, segno, semiosi, pragmatismo, equivalenza, inferenza, semiotics, sign theory">
+  <meta name="author" content="Stefano Carotenuto">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://stefanocarotenuto.github.io/semio-viz/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="SemioViz — Summarized & Visualized">
+  <meta property="og:description" content="Mappa interattiva della teoria semiotica: Saussure, Hjelmslev, Peirce, Eco. Dal modello ristretto al modello allargato.">
+  <meta property="og:url" content="https://stefanocarotenuto.github.io/semio-viz/">
+  <meta property="og:locale" content="it_IT">
+  <meta property="og:locale:alternate" content="en_US">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="SemioViz — Summarized & Visualized">
+  <meta name="twitter:description" content="Mappa interattiva della teoria semiotica: Saussure, Hjelmslev, Peirce, Eco.">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "SemioViz — Summarized & Visualized",
+    "description": "Mappa interattiva che sintetizza e visualizza i concetti fondamentali della semiotica, da Saussure a Eco.",
+    "url": "https://stefanocarotenuto.github.io/semio-viz/",
+    "author": { "@type": "Person", "name": "Stefano Carotenuto", "url": "https://stefanocarotenuto.it" },
+    "inLanguage": ["it", "en"],
+    "applicationCategory": "EducationalApplication",
+    "isAccessibleForFree": true,
+    "about": [
+      { "@type": "Thing", "name": "Semiotics" },
+      { "@type": "Person", "name": "Ferdinand de Saussure" },
+      { "@type": "Person", "name": "Louis Hjelmslev" },
+      { "@type": "Person", "name": "Charles Sanders Peirce" },
+      { "@type": "Person", "name": "Umberto Eco" }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="css/style.min.css">
+</head>
+<body class="light">
+
+  <header id="topbar">
+    <div id="topbar-row">
+      <div id="brand">
+        <h1>SemioViz</h1>
+        <span class="tagline" data-i18n="tagline">Fondamenti della semiotica — Dall'equivalenza all'inferenza</span>
+        <button class="brand-link" onclick="toggleInfo()" id="info-btn" aria-label="Info sul progetto" data-i18n="guideLabel">Guida e info</button>
+      </div>
+      <div class="toolbar">
+        <input type="text" id="search-box" data-i18n-placeholder="search" placeholder="Cerca…" oninput="onSearch(this.value)">
+        <button class="tb-btn" onclick="toggleLang()" id="lang-btn" aria-label="Language">EN</button>
+        <button class="tb-btn" onclick="toggleTheme()" id="theme-btn" aria-label="Theme">
+          <svg id="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg id="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="display:none"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </button>
+      </div>
+    </div>
+    <div id="filters"></div>
+    <nav id="author-tabs" aria-label="Autori"></nav>
+  </header>
+
+  <main id="main">
+    <div id="columns-wrap">
+      <svg id="lines-svg" aria-hidden="true"></svg>
+      <div id="columns"></div>
+    </div>
+  </main>
+
+  <aside id="sheet" role="complementary" aria-label="Dettaglio">
+    <div id="sheet-handle">
+      <span class="esc-hint">ESC</span>
+      <button id="sheet-close-btn" onclick="deselect()" aria-label="Chiudi dettaglio">&#x2715;</button>
+    </div>
+    <div id="sheet-scroll">
+      <div id="s-author"></div>
+      <div id="s-tag"></div>
+      <div id="s-text"></div>
+      <div id="s-diagram"></div>
+      <div id="s-body"></div>
+      <div id="s-conns-label"></div>
+      <div id="s-conns"></div>
+    </div>
+  </aside>
+
+  <aside id="info-panel" role="dialog" aria-label="Informazioni sul progetto">
+    <button class="info-close" onclick="toggleInfo()" aria-label="Chiudi">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <div class="info-body" id="info-body"></div>
+  </aside>
+
+  <script src="js/data.min.js" defer></script>
+  <script src="js/i18n.min.js" defer></script>
+  <script src="js/app.min.js" defer></script>
+</body>
+</html>
